@@ -5,16 +5,52 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Ajax sinterklaasopdracht</title>
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    
+        {{-- voor verouderde panels begin --}}
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        {{-- voor verouderde panels eind --}}
+    
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+        {{-- eigen stylesheet begin --}}
+<link rel="stylesheet" href="{{ URL::asset('css/styles_sinterklaas.css') }}" />
+        {{-- eigen stylesheet eind --}}
 </head>
+
 <body>
-        <ul class="list-group">
-                <li class="list-group-item active">Cras justo odio</li>
-                <li class="list-group-item">Dapibus ac facilisis in</li>
-                <li class="list-group-item">Morbi leo risus</li>
-                <li class="list-group-item">Porta ac consectetur ac</li>
-                <li class="list-group-item">Vestibulum at eros</li>
-        </ul>
+<br>
+        <div class="container">
+                <div class="row">
+
+                        <div class="col-lg-3"></div>
+                        <div class="col-lg-6">
+                                       
+                                <h2>Verlanglijstjes</h2>
+                                <div class="panel panel-default">
+                                        <div class="panel-heading">Panel Heading <a href="" class="pull-right"><i class="fa fa-plus" aria-hidden="true"></i></a></div>
+                                        <div class="panel-body">
+
+                                                <ul class="list-group">
+                                                        <li class="list-group-item list-head"><b>Cras justo odio</b></li>
+                                                        <li class="list-group-item">Dapibus ac facilisis in</li>
+                                                        <li class="list-group-item">Morbi leo risus</li>
+                                                        <li class="list-group-item">Porta ac consectetur ac</li>
+                                                        <li class="list-group-item">Vestibulum at eros</li>
+                                                </ul>
+                                        </div>
+                                </div>
+                                
+                        </div> <!-- end col-6 -->
+                        <div class="col-lg-3"></div>
+
+                </div> <!-- end row -->
+        </div> <!-- end container -->
+
+                
 
 
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
