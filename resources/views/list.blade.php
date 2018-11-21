@@ -31,44 +31,38 @@
                                        
                                 <h2>Verlanglijstjes</h2>
                                 <div class="panel panel-default">
-                                        <div class="panel-heading">Panel Heading <a href="" class="pull-right"><i class="fa fa-plus" aria-hidden="true"></i></a></div>
+                                        <div class="panel-heading">Panel Heading <a href="" id="addNew" class="pull-right" data-toggle="modal" data-target="#myModal"><i class="fa fa-plus" aria-hidden="true"></i></a></div>
                                         <div class="panel-body">
 
                                                 <ul class="list-group">
-                                                        <li class="list-group-item list-head"><b>Cras justo odio</b></li>
-                                                        <li class="list-group-item">Dapibus ac facilisis in</li>
-                                                        <li class="list-group-item">Morbi leo risus</li>
-                                                        <li class="list-group-item">Porta ac consectetur ac</li>
-                                                        <li class="list-group-item">Vestibulum at eros</li>
+                                                        <li class="list-group-item ourItem" data-toggle="modal" data-target="#myModal">Cras justo odio</li>
+                                                        <li class="list-group-item ourItem" data-toggle="modal" data-target="#myModal">Dapibus ac facilisis in</li>
+                                                        <li class="list-group-item ourItem" data-toggle="modal" data-target="#myModal">Morbi leo risus</li>
+                                                        <li class="list-group-item ourItem" data-toggle="modal" data-target="#myModal">Porta ac consectetur ac</li>
+                                                        <li class="list-group-item ourItem" data-toggle="modal" data-target="#myModal">Vestibulum at eros</li>
                                                 </ul>
                                         </div>
                                 </div>
                                 
                         </div> <!-- end col-6 -->
-                        <div class="col-lg-3">
-                                <br>
-                                <br>
-                                <!-- Button trigger modal -->
-                                <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
-                                        Launch demo modal
-                                </button>
-                        </div>
+                        <div class="col-lg-3"></div>
 
                         <div class="modal fade" id="myModal" tabindex="-1" role="dialog">
                                 <div class="modal-dialog" role="document">
                                         <div class="modal-content">
                                                 <div class="modal-header">
+                                                        <h4 class="modal-title" id="title">Add New Item</h4>
                                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                                        <h4 class="modal-title">Modal title</h4>
                                                 </div>
 
                                                 <div class="modal-body">
-                                                        <p>One fine body&hellip;</p>
+                                                        <p><input type="text" placeholder="Write item here" id="addItem" class="form-control"></p>
                                                 </div>
 
                                                 <div class="modal-footer">
-                                                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                                        <button type="button" class="btn btn-primary">Save changes</button>
+                                                        <button type="button" class="btn btn-warning" id="delete" data-dismiss="modal" style="display: none">Delete</button>
+                                                        <button type="button" class="btn btn-primary" id="saveChanges" style="display: none">Save changes</button>
+                                                        <button type="button" class="btn btn-primary" id="addButton">Add item</button>
                                                 </div>
                                         </div><!-- /.modal-content -->
                                 </div><!-- /.modal-dialog -->
@@ -83,5 +77,30 @@
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+        
+        <script>
+                $(document).ready(function(){
+                        $('.ourItem').each(function(){
+                                $(this).click(function(event) {
+                                        var text = $(this).text();
+                                        $('#title').text('Edit Item')
+                                        $('#addItem').val(text);
+                                        $('#delete').show('400');
+                                        $('#saveChanges').show('400');
+                                        $('#addButton').hide('400');
+                                        console.log(text);
+                                });
+                        });
+
+                        $('#addNew').click(function(event) {
+                                        $('#title').text('Add New Item')
+                                        $('#addItem').val("");
+                                        $('#delete').hide('400');
+                                        $('#saveChanges').hide('400');
+                                        $('#addButton').show('400');
+                                        console.log(text);
+                        });
+                });
+        </script>
 </body>
 </html>
