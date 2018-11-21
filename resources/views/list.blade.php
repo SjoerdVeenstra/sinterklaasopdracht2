@@ -7,17 +7,17 @@
     <title>Ajax sinterklaasopdracht</title>
     
         {{-- voor verouderde panels begin --}}
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+                <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+                <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         {{-- voor verouderde panels eind --}}
     
-<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
-<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+        <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 
         {{-- eigen stylesheet begin --}}
-<link rel="stylesheet" href="{{ URL::asset('css/styles_sinterklaas.css') }}" />
+        <link rel="stylesheet" href="{{ URL::asset('css/styles_sinterklaas.css') }}" />
         {{-- eigen stylesheet eind --}}
 </head>
 
@@ -36,9 +36,13 @@
 
                                                 <ul class="list-group">
                                                         <li class="list-group-item ourItem" data-toggle="modal" data-target="#myModal">Cras justo odio</li>
+
                                                         <li class="list-group-item ourItem" data-toggle="modal" data-target="#myModal">Dapibus ac facilisis in</li>
+
                                                         <li class="list-group-item ourItem" data-toggle="modal" data-target="#myModal">Morbi leo risus</li>
+
                                                         <li class="list-group-item ourItem" data-toggle="modal" data-target="#myModal">Porta ac consectetur ac</li>
+
                                                         <li class="list-group-item ourItem" data-toggle="modal" data-target="#myModal">Vestibulum at eros</li>
                                                 </ul>
                                         </div>
@@ -98,7 +102,13 @@
                                         $('#delete').hide('400');
                                         $('#saveChanges').hide('400');
                                         $('#addButton').show('400');
-                                        console.log(text);
+                        });
+
+                        $('#addButton').click(function(event){
+                                var text = $('#addItem').val();
+                                $.post('list', {'text': text}, function(data){
+                                        console.log(data);
+                                });
                         });
                 });
         </script>
